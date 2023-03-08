@@ -38,24 +38,24 @@ module FP16_div_tb(
         clk = 1;
         rst = 1;
         input_valid = 0;
-        //data_dividend = 16'h5543;//84.1875 / 1.626953 = 0x5276£¬pass
-        //data_divisor = 16'h3e82;
-        //data_dividend = 16'h5543;   //84.1875 / 0.000801 = overflow(0x7fff),pass
-        //data_divisor = 16'h128f;
+        data_dividend = 16'h5543;//84.1875 / 1.626953 = 0x5278£¬pass
+        data_divisor = 16'h3e82;
+//        data_dividend = 16'h5543;   //84.1875 / 0.000801 = overflow(0x7fff),pass
+//        data_divisor = 16'h128f;
         //data_dividend = 16'hd543;   //-84.1875 / 0xffff = 0xffff,pass;
         //data_divisor = 16'hffff;
-        //data_dividend = 16'hd543;   //-84.1875 / 2.529297 = 0xd029,pass
-        //data_divisor = 16'h410f;
-        data_dividend = 16'h35c8;   //0.361328 / 0.00164 = 0x5ae2,pass
-        data_divisor = 16'h16b8;
+//        data_dividend = 16'hd543;   //-84.1875 / 2.529297 = 0xd029,pass
+//        data_divisor = 16'h410f;
+//        data_dividend = 16'h0001;
+//        data_divisor = 16'h0001;
         #10 input_valid = 1;
         rst = 0;
         #11 input_valid = 0;
         #9
         #500
         input_valid = 1;
-        data_dividend = 16'h32b3;//0.209351 / 0.000061 = 0x6ab3
-        data_divisor = 16'h0400;
+        data_dividend = 16'h0000;   //0x0000
+        data_divisor = 16'h0001;
         #1
         input_valid = 0;
         #450
